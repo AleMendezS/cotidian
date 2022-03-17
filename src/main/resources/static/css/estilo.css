@@ -1,0 +1,76 @@
+
+#encabezado{
+    position :absolute;
+    top: 0;
+    left: 0;
+    height: 8%;
+    width: 100%;
+    background-color: #00A68A;
+    color: white;
+}
+#encabezado h1{
+    display: inline;
+}
+
+#menu {
+     position :absolute;
+    top: 8%;
+    left: 0;
+    height: 4%;
+    width: 100%;
+    background-color: #597A75;
+    color: black;
+}
+
+#menu a:visited{
+    color:navy;
+}
+#menu a:hover{
+    background: green;
+    color:white;
+}
+#barraLateral{
+    position :absolute;
+    top: 12%;
+    left: 0;
+    height: 81%;
+    width: 20%;
+    background-color: #4AE072;
+    color: black;
+}
+
+#contenido{
+     position :absolute;
+    top: 12%;
+    left: 20%;
+    height: 81%;
+    width: 80%;
+    background-color: #E484B7;
+    color: black;
+    overflow: auto;
+}
+#piePagina{
+     position :absolute;
+    bottom: 0;
+    left: 0%;
+    height: 7%;
+    width: 100%;
+    background-color: #AB28AD;
+    color: black;
+    text-align: center;
+    
+}
+
+#encaTabla{
+    font-size: 20px;
+    background-color: blue;
+    color: yellow;
+}
+#tablaResumen tr:nth-child(odd){
+    background-color: coral;
+    color:white;
+}
+#tablaResumen tr:nth-child(even){
+    background-color: white;
+    color:blue;
+}
