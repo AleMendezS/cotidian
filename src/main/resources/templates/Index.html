@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Saludos</div>
+        <p th:text="${Mensaje}"></p>
+
+        <h1>Cliente desde una clase</h1>
+        <p>Nombre:<span th:text="${cliente.nombre}"></span></p>
+        <p>Apellidos:<span th:text="${cliente.apellidos}"></span></p>
+        <p>Correo:<span th:text="${cliente.correo}"></span></p>
+        <p>Telefono:<span th:text="${cliente.telefono}"></span></p>
+
+        <br>
+        <h1>Clientes desde una lista</h1>
+        <div th:if="${clientes != null and !clientes.empty}">
+             <table border="1">
+            <tr>
+                <td>Nombre</td>
+                <td>Apellidos</td>
+                <td>Correo</td>
+                <td>Telefono</td>
+            </tr>
+            <tr th:each="item : ${clientes}">
+                <td th:text="${item.nombre}"></td>
+                <td th:text="${item.apellidos}"></td>
+                <td th:text="${item.correo}"></td>
+                <td th:text="${item.telefono}"></td>
+
+            </tr>
+        </table>
+        </div>
+        <div th:if="${clientes == null or clientes.empty}">
+            La lista de clientes esta vacia
+        </div>
+        
+        
+        
+        <br>
+        <h1>Clientes desde una lista de base de datos</h1>
+        <div th:if="${clientesDB != null and !clientesDB.empty}">
+             <table border="1">
+            <tr>
+                <td>Nombre</td>
+                <td>Apellidos</td>
+                <td>Correo</td>
+                <td>Telefono</td>
+            </tr>
+            <tr th:each="item : ${clientesDB}">
+                <td th:text="${item.nombre}"></td>
+                <td th:text="${item.apellidos}"></td>
+                <td th:text="${item.correo}"></td>
+                <td th:text="${item.telefono}"></td>
+
+            </tr>
+        </table>
+        </div>
+        <div th:if="${clientesDB == null or clientesDB.empty}">
+            La lista de clientes esta vacia
+        </div>
+    </body>
+</html>
