@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Nuevo cliente </title>
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <h2>Datos del cliente</h2>
+        <br>
+       
+        <form th:action="@{/guardarCliente}"
+              method="post"
+              th:object="${cliente}">
+            <input type="hidden" name ="idcliente" th:field="*{idcliente}"/>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" th:field="*{nombre}">
+            <br>
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" th:field="*{apellidos}">
+            <br>
+            <label for="correo">Correo</label>
+            <input type="email" name="correo" th:field="*{correo}">
+            <br>
+            <label for="telefono">Telefono</label>
+            <input type="tel" name="telefono" th:field="*{telefono}">
+            <br>
+            <input type="submit" name="guardar"  value="Guardar Registro"/>
+        </form>
+
+  <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
+</html>
